@@ -9,10 +9,11 @@ padding: 10px;
 
 export const Text = styled.p`
 margin: 0 auto;
+color: white;
 `;
 
 export const Button = styled.button`
-border: 1px solid gray;
+border: 1px solid darkgreen;
 border-radius: 25px;
 cursor: pointer;
 & :focus , :hover {

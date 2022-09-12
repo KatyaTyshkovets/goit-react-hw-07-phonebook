@@ -8,21 +8,31 @@ margin:15px;
 width: 250px;
 height: 15px;
 font-size: 16px;
-border-radius: 8px;
+border-radius: 40px;
 outline: none;
-border: 1px solid gray;
+color:black;
+background: darkgreen;
+border: 1px solid darkgreen;
 transition: border-color 800ms ease-in-out 0s;
+transition:transform 500ms linear;
+    & :focus , :hover {
+        background-color:green;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+        transform: scale(1.1);
+    }
 `;
 
 export const FormContact = styled(Form)`
 display:flex;
 flex-direction:column;
-margin: 0 auto;
+text-align: center;
 width:350px;
 padding: 5px;
-border: 1px solid dimgray;
+border: 1px solid darkgreen;
 border-radius: 10%;
 transition: border-color 800ms ease-in-out 0s;
+background:black;
+color:white;
 `;
 
 export const Label = styled.label`
@@ -32,8 +42,8 @@ width:200px;
 `;
 
 export const Button = styled.button`
-background-color:floralwhite;
-margin: 0 auto 10px;
+background-color:darkgreen;
+margin: 20px;
  border-radius: 25px;
  padding: 7px;
  width: 180px;
@@ -41,7 +51,7 @@ margin: 0 auto 10px;
     curcor:pointer;
     transition:transform 500ms linear;
     & :focus , :hover {
-        background-color:whitesmoke;
+        background-color:green;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
         transform: scale(1.1);
     }
@@ -50,3 +60,5 @@ margin: 0 auto 10px;
 export const Error = styled.p`
 color: red;
 `;
+
+

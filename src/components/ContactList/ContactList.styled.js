@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const List = styled.ul`
-width:320px;
+width:200px;
 list-style: none;
+
 `;
 

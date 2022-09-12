@@ -1,7 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, Text, Item } from './Item.styled';
-import { remove } from '../../redux/contacts';
-import { getFilter, getItem } from '../../redux/selectors';
+import { removeContact } from 'redux/contact-operations';
+import { getFilter, getItem } from '../../redux/contact-selectors'
+import { useEffect } from 'react';
+import { fetchContacts } from 'redux/contact-operations';
 
 export const ContactItem = () => {
     const filter = useSelector(getFilter);
@@ -9,13 +11,15 @@ export const ContactItem = () => {
     const dispatch = useDispatch();
 
     const deleteContact = id => {
-        dispatch(remove(id));
+        dispatch(removeContact(id));
     };
 
     const getVisisbleContacts = states?.filter(state =>
         state?.name.toLowerCase().includes(filter.toLowerCase())
     );
-
+    useEffect(() => {
+    dispatch(fetchContacts())
+},[dispatch])
     return (
         <>
             {getVisisbleContacts?.map(({ id, name, number }) =>

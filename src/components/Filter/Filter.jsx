@@ -1,20 +1,22 @@
 import { Label, Input } from './Filter.styled';
 import PropTypes from 'prop-types';
-import { setFilter } from '../../redux/contacts';
-import { useSelector, useDispatch } from 'react-redux';
-import { getFilter } from '../../redux/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFilter } from '../../redux/contact-selectors';
+import { setFilter } from 'redux/filter-slice';
 
 const Filter = () => {
-    const dispatch = useDispatch();
+   const dispatch = useDispatch();
      const filter = useSelector(getFilter);
     const changeFilter = e => {
         dispatch(setFilter(e.currentTarget.value));
     };
     return (
+        
         <Label htmlFor=''>
             Find contacts by name
-            <Input type="text" onChange={changeFilter} value={filter}  />
-        </Label>
+            <Input type="text"  value={filter} onChange={changeFilter} />
+            </Label>
+            
     );
 };
 
